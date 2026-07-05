@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.ScrollPane?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.nexus.controller.ScannerController" styleClass="main-content" spacing="20">
+    <padding><Insets top="40" right="50" bottom="20" left="50"/></padding>
+    
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <VBox spacing="0">
+            <HBox alignment="BOTTOM_LEFT" spacing="10">
+                <Label text="System Scanner" styleClass="header-title"/>
+                <Label text="♡" styleClass="decorative-icon" translateY="-15"/>
+            </HBox>
+            <Label text="Detect and manage your local development environment." styleClass="header-subtitle"/>
+            <Label fx:id="projectPathLabel" text="🔍 Analyzing context..." styleClass="header-subtitle" style="-fx-text-fill: -primary-btn; -fx-padding: 5 0 0 0; -fx-font-weight: bold;"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        
+        <!-- Top Right Sticky Note -->
+        <VBox styleClass="sticky-note-alt" rotate="2" alignment="CENTER" spacing="5">
+             <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+             <Label text="Building dreams" styleClass="sticky-text"/>
+             <Label text="with code ♡" styleClass="sticky-text"/>
+        </VBox>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT">
+        <Button fx:id="scanButton" text="🌸 Run Context Scan 🔍" onAction="#onScanButtonClick" styleClass="primary-button"/>
+    </HBox>
+    
+    <ScrollPane fitToWidth="true" styleClass="scroll-pane-custom" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+        <VBox fx:id="scanResultsBox" spacing="15" styleClass="results-container">
+            <padding><Insets top="10" bottom="10"/></padding>
+        </VBox>
+    </ScrollPane>
+    
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="One step at a time. You're doing great! 🌸 ✨" styleClass="footer-text"/>
+    </HBox>
+</VBox>

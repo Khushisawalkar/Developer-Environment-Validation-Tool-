@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.nexus.controller.ProcessesController" styleClass="main-content" spacing="20">
+    <padding><Insets top="40" right="50" bottom="40" left="50"/></padding>
+    
+    <VBox spacing="5">
+        <Label text="Process Manager" styleClass="header-title"/>
+        <Label text="View and manage running OS processes." styleClass="header-subtitle"/>
+    </VBox>
+
+    <Button text="Refresh List" onAction="#loadProcesses" styleClass="primary-button"/>
+
+    <TableView fx:id="processTable" styleClass="table-view-custom" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="pidCol" text="PID" prefWidth="100"/>
+            <TableColumn fx:id="nameCol" text="Process Name" prefWidth="300"/>
+            <TableColumn fx:id="userCol" text="User" prefWidth="200"/>
+            <TableColumn fx:id="actionCol" text="Action" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>
