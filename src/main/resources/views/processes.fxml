@@ -3,25 +3,56 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.nexus.controller.ProcessesController" styleClass="main-content" spacing="20">
-    <padding><Insets top="40" right="50" bottom="40" left="50"/></padding>
+    <padding><Insets top="40" right="50" bottom="20" left="50"/></padding>
     
-    <VBox spacing="5">
-        <Label text="Process Manager" styleClass="header-title"/>
-        <Label text="View and manage running OS processes." styleClass="header-subtitle"/>
-    </VBox>
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <VBox spacing="0">
+            <HBox alignment="BOTTOM_LEFT" spacing="10">
+                <Label text="Process Manager" styleClass="header-title"/>
+                <Label text="✂️" styleClass="decorative-icon" translateY="-15"/>
+            </HBox>
+            <Label text="Monitor and safely terminate rogue background tasks." styleClass="header-subtitle"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        
+        <HBox alignment="CENTER" spacing="10">
+            <Label text="Filter:" styleClass="header-subtitle"/>
+            <ComboBox fx:id="filterComboBox" styleClass="combo-box" onAction="#onFilterChange">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="All Processes"/>
+                        <String fx:value="High Memory (> 500MB)"/>
+                        <String fx:value="Hung / Not Responding"/>
+                        <String fx:value="Safe to Kill"/>
+                    </FXCollections>
+                </items>
+                <value>
+                    <String fx:value="All Processes"/>
+                </value>
+            </ComboBox>
+            <Button fx:id="refreshButton" text="🔄 Refresh" onAction="#refreshProcesses" styleClass="primary-button"/>
+        </HBox>
+    </HBox>
 
-    <Button text="Refresh List" onAction="#loadProcesses" styleClass="primary-button"/>
-
-    <TableView fx:id="processTable" styleClass="table-view-custom" VBox.vgrow="ALWAYS">
+    <TableView fx:id="processTable" VBox.vgrow="ALWAYS" styleClass="table-view-custom">
         <columns>
-            <TableColumn fx:id="pidCol" text="PID" prefWidth="100"/>
-            <TableColumn fx:id="nameCol" text="Process Name" prefWidth="300"/>
-            <TableColumn fx:id="userCol" text="User" prefWidth="200"/>
-            <TableColumn fx:id="actionCol" text="Action" prefWidth="120"/>
+            <TableColumn fx:id="pidCol" text="PID" prefWidth="80"/>
+            <TableColumn fx:id="nameCol" text="Process Name" prefWidth="180"/>
+            <TableColumn fx:id="categoryCol" text="Category" prefWidth="120"/>
+            <TableColumn fx:id="memCol" text="Memory" prefWidth="100"/>
+            <TableColumn fx:id="uptimeCol" text="Uptime" prefWidth="80"/>
+            <TableColumn fx:id="safenessCol" text="Safeness" prefWidth="100"/>
+            <TableColumn fx:id="actionCol" text="Action" prefWidth="100"/>
         </columns>
     </TableView>
 </VBox>
