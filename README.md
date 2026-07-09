@@ -1,33 +1,53 @@
-# 🌸 Nexus - Cozy Developer Workspace Manager
+# 🚀 Developer Environment Validation Tool
 
-A beautiful, pastel-themed "cozy" Developer Workspace Manager built with **Java 17, Spring Boot, and JavaFX**. Nexus helps you manage your development environments, monitor system load, and quickly jump into your coding projects without the hassle.
+A desktop application that validates a developer's workstation by automatically verifying software dependencies, system configuration, and available system resources before development begins. The tool helps simplify environment setup, identify configuration issues, and improve developer productivity across Windows and Linux.
 
 ## ✨ Features
 
-### 🏡 Context-Aware Environment Scanner
-Instead of blindly checking your system, Nexus parses your active project's dependencies (like `pom.xml` or `package.json`). It automatically detects whether you need Java, Node.js, Docker, or Postgres, and dynamically scans your system (and even WSL!) to make sure you have everything installed. Missing a tool? Nexus provides a convenient one-click download link.
+### 🔍 Dependency Validation
+Automatically detects and verifies essential development tools including Java, Git, Python, Maven, and Node.js.
 
-### 📁 Workspace Profiles
-Save and serialize your workspace configurations. With a single click, Nexus can launch your IDE (like IntelliJ or VSCode) and spin up a terminal perfectly mapped to your project directory. 
+### ⚙️ Environment Configuration
+Validates environment variables, system configuration, and project prerequisites required for development.
 
-### 💻 Process Manager
-A native OS process manager built directly into the UI. View all active processes, memory/CPU usage, and forcefully terminate rogue tasks directly from Nexus. 
+### 💻 System Resource Monitoring
+Displays CPU, memory, and disk availability to identify resource limitations before running applications.
 
-### 🌿 System Health Monitor & Optimizer
-A background OS poller continuously monitors your CPU and RAM usage. If your system load spikes above 85%, the Health Widget flashes a warning and reveals a **Refresh System** button. Clicking it safely flushes your DNS, clears bloated Windows `%TEMP%` files, and forces JVM Garbage Collection.
+### 📊 Readiness Report
+Generates a system readiness report highlighting missing dependencies, configuration issues, and recommended fixes.
 
 ## 🛠️ Tech Stack
-* **Language**: Java 17
-* **Framework**: Spring Boot
-* **UI**: JavaFX (with a custom CSS pastel/scrapbook design)
-* **OS Interop**: Native Java `ProcessBuilder`, `ProcessHandle`, and `OperatingSystemMXBean`
 
-## 🚀 Getting Started
+- Java 17
+- JavaFX
+- Git
+- Linux / Windows
+- Java ProcessBuilder API
 
-1. Ensure you have **Java 17** installed.
-2. Clone the repository.
-3. Import the project into IntelliJ IDEA as a Maven project.
-4. Run `NexusApplication.main()`!
+## 📂 Project Structure
 
-## 💌 Design Philosophy
-Focus on progress, not perfection. Nexus embraces a "cozy coding" aesthetic with soft pastel colors, rounded typography, and cute ascii graphics, proving that powerful developer tooling doesn't *have* to look like a hacker terminal.
+```
+Developer-Environment-Validation-Tool/
+│
+├── src/
+├── docs/
+├── screenshots/
+├── README.md
+└── pom.xml
+```
+
+## 🚀 Future Improvements
+
+- Docker environment validation
+- WSL support
+- Automatic dependency installation
+- PDF report generation
+- Project-specific validation profiles
+
+## 📚 Learning Outcomes
+
+- Java Desktop Development
+- Operating System Integration
+- Process Management
+- Environment Configuration
+- System Automation
