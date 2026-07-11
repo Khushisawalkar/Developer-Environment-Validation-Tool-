@@ -36,6 +36,11 @@ Developer-Environment-Validation-Tool/
 └── pom.xml
 ```
 
+## 📖 Documentation
+
+- **[User Guide](./docs/user-guide.md)**: Instructions on how to run the application, prerequisites, and troubleshooting.
+- **[Technical Documentation](./docs/technical-documentation.md)**: Architectural overview, validation logic, and extension guidelines.
+
 ## 🚀 Future Improvements
 
 - Docker environment validation
