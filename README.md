@@ -16,6 +16,12 @@ Displays CPU, memory, and disk availability to identify resource limitations bef
 ### 📊 Readiness Report
 Generates a system readiness report highlighting missing dependencies, configuration issues, and recommended fixes.
 
+### 📁 Advanced Workspace Management & Tracking (New)
+- **Automatic Project Detection**: Intelligently identifies project types (Maven, Gradle, npm) and primary languages dynamically.
+- **Git Integration**: Asynchronously fetches real-time Git status (current branch, clean/uncommitted changes) using Java `ProcessBuilder`.
+- **Smart Sorting**: Tracks your recently opened projects and automatically sorts your workspace list for quick access.
+- **Project Statistics**: Analyzes your workspace to surface key dependencies (e.g., PostgreSQL, Spring Boot, React) and last modified timestamps.
+
 ## 🛠️ Tech Stack
 
 - Java 17

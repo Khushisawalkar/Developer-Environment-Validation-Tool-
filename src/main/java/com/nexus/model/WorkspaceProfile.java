@@ -8,6 +8,15 @@ public class WorkspaceProfile {
     private String projectPath;
     private String ideCommand;
     private List<String> browserUrls;
+    
+    // New fields for advanced tracking
+    private String projectType;
+    private String gitBranch;
+    private String gitStatus;
+    private long lastOpened;
+    private String primaryLanguage;
+    private long lastModified;
+    private List<String> keyDependencies;
 
     // Default constructor for Jackson
     public WorkspaceProfile() {}
@@ -18,6 +27,7 @@ public class WorkspaceProfile {
         this.projectPath = projectPath;
         this.ideCommand = ideCommand;
         this.browserUrls = browserUrls;
+        this.lastOpened = System.currentTimeMillis();
     }
 
     // Getters and Setters
@@ -31,4 +41,25 @@ public class WorkspaceProfile {
     public void setIdeCommand(String ideCommand) { this.ideCommand = ideCommand; }
     public List<String> getBrowserUrls() { return browserUrls; }
     public void setBrowserUrls(List<String> browserUrls) { this.browserUrls = browserUrls; }
+    
+    public String getProjectType() { return projectType; }
+    public void setProjectType(String projectType) { this.projectType = projectType; }
+    
+    public String getGitBranch() { return gitBranch; }
+    public void setGitBranch(String gitBranch) { this.gitBranch = gitBranch; }
+    
+    public String getGitStatus() { return gitStatus; }
+    public void setGitStatus(String gitStatus) { this.gitStatus = gitStatus; }
+    
+    public long getLastOpened() { return lastOpened; }
+    public void setLastOpened(long lastOpened) { this.lastOpened = lastOpened; }
+    
+    public String getPrimaryLanguage() { return primaryLanguage; }
+    public void setPrimaryLanguage(String primaryLanguage) { this.primaryLanguage = primaryLanguage; }
+    
+    public long getLastModified() { return lastModified; }
+    public void setLastModified(long lastModified) { this.lastModified = lastModified; }
+    
+    public List<String> getKeyDependencies() { return keyDependencies; }
+    public void setKeyDependencies(List<String> keyDependencies) { this.keyDependencies = keyDependencies; }
 }

@@ -69,6 +69,17 @@ public class WorkspaceManagerService {
                 term.directory(new File(profile.getProjectPath()));
                 term.start();
 
+                // Update last opened timestamp
+                profile.setLastOpened(System.currentTimeMillis());
+                List<WorkspaceProfile> profiles = getProfiles();
+                for (int i = 0; i < profiles.size(); i++) {
+                    if (profiles.get(i).getId().equals(profile.getId())) {
+                        profiles.set(i, profile);
+                        break;
+                    }
+                }
+                saveProfiles(profiles);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
