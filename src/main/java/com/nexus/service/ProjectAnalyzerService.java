@@ -57,6 +57,8 @@ public class ProjectAnalyzerService {
         }
         
         return requiredTools.stream().distinct().toList();
+    }
+
     public void analyzeWorkspaceDetails(com.nexus.model.WorkspaceProfile profile) {
         File dir = new File(profile.getProjectPath());
         if (!dir.exists() || !dir.isDirectory()) {

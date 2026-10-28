@@ -41,7 +41,9 @@ public class StageInitializer implements ApplicationListener<StageReadyEvent> {
             stage.setScene(scene);
             stage.setTitle(applicationTitle);
             stage.show();
-        } catch (IOException e) {
+            stage.toFront();
+            stage.requestFocus();
+        } catch (Exception e) {
             throw new RuntimeException("Failed to load dashboard.fxml", e);
         }
     }
